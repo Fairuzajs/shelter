@@ -5,6 +5,7 @@ $color-dark: #292929;
 $color-dark-grey: #4C4C4C;
 $color-white: #ffffff;
 $color-light-s: #fafafa;
+$color-bc: #f6f6f6;
 $color-grey: #cdcdcd;
 $color-grey-cursor: #b2b2b2;
 
@@ -20,6 +21,7 @@ $font-family-georgia: Georgia;
     margin: 0;
     font-weight: 400;
     font-style: normal;
+    scroll-behavior: smooth;
 }
 
 
@@ -179,7 +181,7 @@ $font-family-georgia: Georgia;
 /* PETS*/
 
 .pets {
-    background-color:$color-light-s;
+    background-color:$color-bc;
 }
 .pets-content {
     padding-top: 80px;
@@ -278,7 +280,7 @@ $font-family-georgia: Georgia;
     }
     &:hover {
 cursor: pointer;
-background-color: #fff;
+background-color: $color-white;
     }
 
     
@@ -379,7 +381,7 @@ background-color: #fff;
 /* DONATION */
 
 .donation {
-    background-color:$color-light-s;
+    background-color:$color-bc;
 }
 .donation-content {
 padding: 80px 143px 100px;
@@ -423,14 +425,26 @@ align-items: center;
     gap: 15px;
     align-items: center;
     padding: 10px 15px;
+    a {
+        img { transition: 0.8s;
+            
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+                box-shadow: 1px 1px 4px #292929;
+            }
+        }
+    }
 
     .card-number {
         
             a {
                 text-decoration: none;
                 letter-spacing: 0.06em;
-            @include font-text(20px, $font-family-georgia, 23px, $color-dark);
-            }
+                transition: 0.8s;
+           @include font-text(20px, $font-family-georgia, 23px, $color-dark);
+           
+        }
     
         }
 }

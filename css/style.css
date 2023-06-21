@@ -4,6 +4,7 @@
   margin: 0;
   font-weight: 400;
   font-style: normal;
+  scroll-behavior: smooth;
 }
 
 .wrapper {
@@ -156,7 +157,7 @@ header {
 
 /* PETS*/
 .pets {
-  background-color: #fafafa;
+  background-color: #f6f6f6;
 }
 
 .pets-content {
@@ -259,7 +260,7 @@ header {
 }
 .pets-card:hover {
   cursor: pointer;
-  background-color: #fff;
+  background-color: #ffffff;
 }
 .pets-card img {
   border-radius: 9px 9px 0px 0px;
@@ -357,7 +358,7 @@ header {
 
 /* DONATION */
 .donation {
-  background-color: #fafafa;
+  background-color: #f6f6f6;
 }
 
 .donation-content {
@@ -407,9 +408,18 @@ header {
   align-items: center;
   padding: 10px 15px;
 }
+.credit-card a img {
+  transition: 0.8s;
+}
+.credit-card a img:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 1px 1px 4px #292929;
+}
 .credit-card .card-number a {
   text-decoration: none;
   letter-spacing: 0.06em;
+  transition: 0.8s;
   font-size: 20px;
   font-family: Georgia;
   line-height: 23px;
