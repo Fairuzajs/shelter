@@ -74,11 +74,23 @@ $font-family-georgia: Georgia;
 
             a {
                 text-decoration: none;
-                transition: all 0.7s;
+                display: inline-block;
+                position: relative;
                 @include font-text(15px, $font-family-arial, 24px, $color-grey);
-                &:hover {
+                &:after {
+                    display: block;
+                    content: "";
                     color: $color-light-s;
-                    border-bottom: 3px solid $color-dark-grey;
+                    background-color: $color-primary;
+                    height: 2px;
+                    width: 0%;
+                    left: 50%;
+                    position: absolute;
+                    transition: width .3s ease-in-out;
+                    transform: translateX(-50%);
+                }
+                &:hover:after {
+                    width: 100%;
                 }
                 
             }
@@ -117,20 +129,20 @@ $font-family-georgia: Georgia;
         @include font-text(15px, $font-family-arial, 24px, $color-grey);
     }
 
-    a {
-        button {
+    .btn_header-block_btn {
+            width: 207px;
+            text-decoration: none;
             background-color: $color-primary;
             border-radius: 100px;
-            padding: 15px 45px;
+            padding: 15px 0px;
+            text-align: center;
             @include font-text(17px, $font-family-georgia, 22px, $color-dark);
             transition: all  0.7s;
             letter-spacing: 0.06em;
             &:hover {
                 cursor: pointer;
                 background-color: $color-primary-light;
-            }
-        }
-       
+            }     
     }
 }
 
@@ -165,13 +177,17 @@ $font-family-georgia: Georgia;
 
 
 /* PETS*/
+
+.pets {
+    background-color:$color-light-s;
+}
 .pets-content {
     padding-top: 80px;
     padding-bottom: 100px;
     display: flex;
     flex-direction: column;
-    row-gap: 60px;
-    background-color:$color-light-s;
+    gap: 60px;
+    
     align-items: center;
 
     h3 {
@@ -182,20 +198,24 @@ $font-family-georgia: Georgia;
         padding-left: 400px;
     }
 
-    a {
-        button {
+    .petsour{
+        text-decoration: none;
+        width: 261px;
+        height: 52px;
             background-color: $color-primary;
             border-radius: 100px;
-            padding: 15px 45px;
+            padding: 15px 0px;
+            text-align: center;
             letter-spacing: 0.06em;
             @include font-text(17px, $font-family-georgia, 22px, $color-dark);
             transition: all  0.7s;
             border: none;
+           
             &:hover {
                 cursor: pointer;
                 background-color: $color-primary-light;
             }
-        }
+        
        
     }
 }
@@ -203,6 +223,9 @@ $font-family-georgia: Georgia;
 .pets-container {
     display: flex;
     gap: 53px;
+    justify-content: center;
+    align-items: center;
+    
 
     button {
         border: 2px solid $color-primary;
@@ -224,18 +247,232 @@ $font-family-georgia: Georgia;
 }
 
 .pets-card {
+    background-color: #fafafa;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
+    border-radius: 0px 0px 9px 9px;
+    transition: all 0.8s;
+    .name {
+        letter-spacing: 0.06em;
+        text-decoration: none;
+        @include font-text(20px, $font-family-georgia, 23px, $color-dark-light);
+    }
+    
+    .learn-btn {
+      border-radius: 100px;
+      border: 2px solid $color-primary;
+      width: 187px;
+      text-decoration: none;
+      padding: 15px 0px;
+      text-align: center;
+      @include font-text(17px, $font-family-georgia, 22px, $color-dark);
+      letter-spacing: 0.06em;
+      transition: all 0.8s;
+      &:hover {
+        background-color: $color-primary-light;
+        cursor: pointer;
+        border: 2px solid $color-primary-light;
+      }
+    }
+    &:hover {
+cursor: pointer;
+background-color: #fff;
+    }
+
+    
     img {
         border-radius: 9px 9px 0px 0px;
     }
-   
-
 }
+
 /* HELP */
+.wrapper {
+    width: 93.75%;
+    margin: 0 auto;
+}
+
+.help-content {
+    padding-top: 80px;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    h3 {
+        letter-spacing: 0.06em;
+        @include font-text(35px, $font-family-georgia, 45px, $color-dark-light);
+        text-align: center;
+        padding-right: 444px;
+        padding-left: 446px;
+    }
+}
+
+.help-block {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 55px;
+    column-gap: 120px;
+    padding-left: 86px;
+    padding-right: 86px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    .food {
+        width: 83px;
+        height: 113px;
+    }
+    .transportation {
+        width: 150px;
+        height: 113px;
+    }
+    .toys {
+        width: 60px;
+        height: 113px;
+    }
+    .bowls {
+        width: 154px;
+        height: 113px;
+    }
+    .shampoos {
+        width: 101px;
+        height: 113px;
+        img {
+            width: 31px;
+        }
+    }
+    .vitamins {
+        width: 89px;
+        height: 113px;
+    }
+    .medicines {
+        width: 101px;
+        height: 113px;
+    }
+    .collars {
+        width: 166px;
+        height: 113px;
+    }
+    .slepping {
+        width: 144px;
+        height: 113px;
+    }
+ 
+
+
+    .flex-item {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        .help-name {
+            text-align: start;
+            letter-spacing: 0.06em;
+            @include font-text(20px, $font-family-georgia, 23px, $color-dark);
+        }
+    }
+}
+
 
 /* DONATION */
 
+.donation {
+    background-color:$color-light-s;
+}
+.donation-content {
+padding: 80px 143px 100px;
+display: flex;
+gap: 30px;
+align-items: center;
+}
+
+.donation__text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+   
+    h3 {
+        letter-spacing: 0.06em;
+        @include font-text(35px, $font-family-georgia, 45px, $color-dark-light);
+        text-align: start;
+        padding-right: 80px;
+    }
+
+    h5 {
+        letter-spacing: 0.06em;
+        @include font-text(15px, $font-family-georgia, 17px, $color-dark);
+    }
+
+
+
+    .legal-inf {
+        font-style: italic;
+        @include font-text(12px, $font-family-arial, 18px, $color-grey-cursor);
+    }
+}
+
+.credit-card {
+    display: block;
+    width: 350px;
+    height: 43px;
+    background-color: $color-primary;
+    border-radius: 9px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding: 10px 15px;
+
+    .card-number {
+        
+            a {
+                text-decoration: none;
+                letter-spacing: 0.06em;
+            @include font-text(20px, $font-family-georgia, 23px, $color-dark);
+            }
+    
+        }
+}
+
 /* FOOTER */
+
+footer {
+    background: url(../img/noise_transparent@2x.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+}
+
+.footer {
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 160px;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 234px;
+    h3 {
+        letter-spacing: 0.06em;
+        @include font-text(35px, $font-family-georgia, 45.5px, $color-white);
+        
+    }
+    span {
+        a  {
+            text-decoration: none;
+            @include font-text(20px, $font-family-georgia, 23px, $color-primary);
+        }
+    }
+    
+
+    
+}
+
+.telephone {
+    width: 279px;
+}
+
+.adress {
+    width: 300px;
+}
