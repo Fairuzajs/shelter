@@ -1,0 +1,223 @@
+$color-primary-light:  #FDDCC4;
+$color-primary: #F1CDB3;
+$color-dark-light: #545454;
+$color-dark: #292929;
+$color-dark-grey: #4C4C4C;
+$color-white: #ffffff;
+$color-light-s: #fafafa;
+$color-bc: #f6f6f6;
+$color-grey: #cdcdcd;
+$color-grey-cursor: #b2b2b2;
+
+
+
+$font-family-arial: Arial;
+$font-family-georgia: Georgia;
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+    font-style: normal;
+    scroll-behavior: smooth;
+}
+
+
+.wrapper {
+    width: 93.75%;
+    margin: 0 auto;
+}
+
+@mixin font-text($fs, $ff, $lh, $color) {
+    font-size: $fs;
+    font-family: $ff;
+    line-height: $lh;
+    color: $color;
+ }
+
+
+ 
+.heading-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    h2 {    
+        a {
+           text-decoration: none;  
+           @include font-text(32px, $font-family-georgia, 35px, $color-dark-light);
+           letter-spacing: 0.06em;
+           transition: all 0.8s;
+           &:hover {
+                color: $color-primary-light;
+                cursor: pointer;
+                  }       
+            }
+        }
+    p {
+       @include font-text(13px, $font-family-arial, 15px, $color-dark);
+       padding-top: 10px;
+       letter-spacing: 0.1em;
+    }
+
+    
+       .navigation {
+        display: flex;
+        gap: 35px;
+        flex-direction: row;
+
+        li {
+            list-style: none;
+
+            a {
+                text-decoration: none;
+                display: inline-block;
+                position: relative;
+                @include font-text(15px, $font-family-arial, 24px, $color-dark-light);
+                &:after {
+                    display: block;
+                    content: "";
+                    color: $color-dark;
+                    background-color: $color-primary;
+                    height: 2px;
+                    width: 0%;
+                    left: 50%;
+                    position: absolute;
+                    transition: width .3s ease-in-out;
+                    transform: translateX(-50%);
+                }
+                &:hover:after {
+                    width: 100%;
+                }
+                
+            }
+        }
+       } 
+    
+}
+
+/*PETS*/
+.pets {
+    background-color: $color-bc;
+}
+
+.pets-content {
+    padding-top: 80px;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    align-items: center;
+    h3 {
+        letter-spacing: 0.06em;
+        @include font-text(35px, $font-family-georgia, 45px, $color-dark-light);
+        text-align: center;
+        padding-left: 400px;
+        padding-right: 400px;
+    }
+}
+
+.active-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 40px;
+    row-gap: 30px;
+    justify-content: space-between;
+
+}
+
+
+
+.pets-nav {
+    button {
+    border: 2px solid $color-primary;
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    transition: all 0.8s;
+    &:hover {
+        background-color: $color-primary-light;
+        cursor: pointer;
+    }
+    
+}
+}
+
+
+
+.pets-card {
+    background-color: $color-light-s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    border-radius: 0px 0px 9px 9px;
+    transition: all 0.8s;
+    .name {
+        letter-spacing: 0.06em;
+        text-decoration: none;
+        @include font-text(20px, $font-family-georgia, 23px, $color-dark-light);
+    }
+    
+    .learn-btn {
+      border-radius: 100px;
+      border: 2px solid $color-primary;
+      width: 187px;
+      text-decoration: none;
+      padding: 15px 0px;
+      text-align: center;
+      @include font-text(17px, $font-family-georgia, 22px, $color-dark);
+      letter-spacing: 0.06em;
+      transition: all 0.8s;
+      &:hover {
+        background-color: $color-primary-light;
+        cursor: pointer;
+        border: 2px solid $color-primary-light;
+      }
+    }
+    &:hover {
+cursor: pointer;
+background-color: $color-white;
+    }
+
+    
+    img {
+        border-radius: 9px 9px 0px 0px;
+    }
+}
+
+
+footer {
+    background: url(../img/noise_transparent@2x.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+}
+
+.footer {
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 160px;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 234px;
+    h3 {
+        letter-spacing: 0.06em;
+        @include font-text(35px, $font-family-georgia, 45.5px, $color-white);
+        
+    }
+    span {
+        a  {
+            text-decoration: none;
+            @include font-text(20px, $font-family-georgia, 23px, $color-primary);
+        }
+    }
+    
+
+    
+}

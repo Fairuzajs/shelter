@@ -1,0 +1,195 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+  font-style: normal;
+  scroll-behavior: smooth;
+}
+
+.wrapper {
+  width: 93.75%;
+  margin: 0 auto;
+}
+
+.heading-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+}
+.heading-content h2 a {
+  text-decoration: none;
+  font-size: 32px;
+  font-family: Georgia;
+  line-height: 35px;
+  color: #545454;
+  letter-spacing: 0.06em;
+  transition: all 0.8s;
+}
+.heading-content h2 a:hover {
+  color: #FDDCC4;
+  cursor: pointer;
+}
+.heading-content p {
+  font-size: 13px;
+  font-family: Arial;
+  line-height: 15px;
+  color: #292929;
+  padding-top: 10px;
+  letter-spacing: 0.1em;
+}
+.heading-content .navigation {
+  display: flex;
+  gap: 35px;
+  flex-direction: row;
+}
+.heading-content .navigation li {
+  list-style: none;
+}
+.heading-content .navigation li a {
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  font-size: 15px;
+  font-family: Arial;
+  line-height: 24px;
+  color: #545454;
+}
+.heading-content .navigation li a:after {
+  display: block;
+  content: "";
+  color: #292929;
+  background-color: #F1CDB3;
+  height: 2px;
+  width: 0%;
+  left: 50%;
+  position: absolute;
+  transition: width 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+.heading-content .navigation li a:hover:after {
+  width: 100%;
+}
+
+/*PETS*/
+.pets {
+  background-color: #f6f6f6;
+}
+
+.pets-content {
+  padding-top: 80px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  align-items: center;
+}
+.pets-content h3 {
+  letter-spacing: 0.06em;
+  font-size: 35px;
+  font-family: Georgia;
+  line-height: 45px;
+  color: #545454;
+  text-align: center;
+  padding-left: 400px;
+  padding-right: 400px;
+}
+
+.active-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+  row-gap: 30px;
+  justify-content: space-between;
+}
+
+.pets-nav button {
+  border: 2px solid #F1CDB3;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  transition: all 0.8s;
+}
+.pets-nav button:hover {
+  background-color: #FDDCC4;
+  cursor: pointer;
+}
+
+.pets-card {
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  border-radius: 0px 0px 9px 9px;
+  transition: all 0.8s;
+}
+.pets-card .name {
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: Georgia;
+  line-height: 23px;
+  color: #545454;
+}
+.pets-card .learn-btn {
+  border-radius: 100px;
+  border: 2px solid #F1CDB3;
+  width: 187px;
+  text-decoration: none;
+  padding: 15px 0px;
+  text-align: center;
+  font-size: 17px;
+  font-family: Georgia;
+  line-height: 22px;
+  color: #292929;
+  letter-spacing: 0.06em;
+  transition: all 0.8s;
+}
+.pets-card .learn-btn:hover {
+  background-color: #FDDCC4;
+  cursor: pointer;
+  border: 2px solid #FDDCC4;
+}
+.pets-card:hover {
+  cursor: pointer;
+  background-color: #ffffff;
+}
+.pets-card img {
+  border-radius: 9px 9px 0px 0px;
+}
+
+footer {
+  background: url(../img/noise_transparent@2x.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+}
+
+.footer {
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  gap: 160px;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 234px;
+}
+.contact h3 {
+  letter-spacing: 0.06em;
+  font-size: 35px;
+  font-family: Georgia;
+  line-height: 45.5px;
+  color: #ffffff;
+}
+.contact span a {
+  text-decoration: none;
+  font-size: 20px;
+  font-family: Georgia;
+  line-height: 23px;
+  color: #F1CDB3;
+}/*# sourceMappingURL=pets.css.map */
