@@ -15,6 +15,7 @@ $font-family-arial: Arial;
 $font-family-georgia: Georgia;
 
 
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -24,6 +25,50 @@ $font-family-georgia: Georgia;
     scroll-behavior: smooth;
 }
 
+@mixin responsive($media) {
+    @if $media == media1200 {
+        @media only screen and (max-width: $media1200) {@content;}
+    }
+    
+    @if $media == media1024 {
+        @media only screen and (max-width: $media1024) { @content; }
+    }
+
+    @if $media == media920 {
+        @media only screen and (max-width: $media920) { @content;}
+    }
+
+    @if $media == media768 {
+        @media only screen and (max-width: $media768) { @content;}
+    }
+
+    @if $media == media700 {
+            @media only screen and (max-width: $media700) { @content;}
+    }
+    
+    @if $media == media575 {
+        @media only screen and (max-width: $media575) {@content;}
+    }
+
+    @if $media == media375 {
+        @media only screen and (max-width: $media375) { @content; }
+    }
+
+    @if $media == media320 {
+        @media only screen and (max-width: $media320) { @content;}
+    }
+ }
+
+
+
+$media320: 320px;
+$media375: 375px;
+$media575: 575px; //burger menu
+$media768: 767px;
+$media920: 920px;
+$media1024: 1024px;
+$media1200: 1200px;
+$media700: 700px;
 
 .wrapper {
     width: 93.75%;
@@ -106,16 +151,39 @@ $font-family-georgia: Georgia;
 .pets-content {
     padding-top: 80px;
     padding-bottom: 100px;
+    @include responsive(media768) {
+        padding: 42px 0px;
+        align-items: center;
+    }
     display: flex;
     flex-direction: column;
-    gap: 45px;
+    gap: 60px;
     align-items: center;
     h3 {
         letter-spacing: 0.06em;
         @include font-text(35px, $font-family-georgia, 45px, $color-dark-light);
         text-align: center;
-        padding-left: 400px;
-        padding-right: 400px;
+        padding-right: 31.25vw;
+        padding-left: 31.25vw;
+        @include responsive(media920){
+            padding-left: 25.05vw;
+            padding-right: 25.05vw;
+        }
+        @include responsive(media768){
+            padding-left: 20.05vw;
+            padding-right: 20.05vw;
+        }
+        @include responsive(media575) {
+          
+            font-size: 25px;
+            line-height: 32px;
+        }
+        @include responsive(media380) {
+           padding-left: 0px;
+           padding-right: 0px;
+            font-size: 25px;
+            line-height: 32px;
+        }
     }
 }
 
@@ -126,6 +194,13 @@ $font-family-georgia: Georgia;
     column-gap: 40px;
     row-gap: 30px;
     justify-content: space-between;
+    @include responsive(media768) {
+        align-items: center;
+        justify-content: space-between;
+    }
+    @include responsive(media575) {
+ justify-content: center;
+    }
 
 }
 
@@ -145,6 +220,7 @@ $font-family-georgia: Georgia;
     
 }
 }
+
 
 
 
@@ -189,35 +265,83 @@ background-color: $color-white;
     }
 }
 
+/*   foooter */
 
 footer {
     background: url(../img/noise_transparent@2x.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 }
+
 
 .footer {
     padding-top: 40px;
     display: flex;
     justify-content: space-between;
     gap: 160px;
+
+    @include responsive(media1200){
+        flex-direction: column;
+        gap: 65px;
+        align-items: center;
+    }
 }
+
+.contact-footer {
+    display: flex;
+    gap: 160px;
+    flex-wrap: wrap;
+    @include responsive(media920) { gap: 100px;}
+    @include responsive(media768) { gap: 60px;}
+    @include responsive(media575) {justify-content: center; align-items: center;}
+}
+
 
 .contact {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 234px;
+    @include responsive(media575) {
+        align-items: center;
+    }
     h3 {
         letter-spacing: 0.06em;
         @include font-text(35px, $font-family-georgia, 45.5px, $color-white);
-        
+        @include responsive(media575) {
+            width: 270px;
+            text-align: center;
+            font-size: 25px;
+            line-height: 32px;
+        }
     }
     span {
         a  {
             text-decoration: none;
             @include font-text(20px, $font-family-georgia, 23px, $color-primary);
+            @include responsive(media375) {
+              font-size: 15px;
+              line-height: 18px;
+            }
+        }
+    } 
+}
+
+.telephone {
+    width: 279px;
+}
+
+.adress {
+    width: 300px;
+}
+
+
+.footer__img {
+    img {
+        width: 300px;
+        @include responsive(media575) {
+            width: 280px;
+        }
+        @include responsive(media375) {
+            width: 260px;
         }
     }
-    
-
-    
 }
